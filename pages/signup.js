@@ -5,9 +5,6 @@ export default function Modal() {
   const [showModal, setShowModal] = React.useState(false);
   const [regis, setRegis] = useState({ username: '', password: '', email: '' });
 
-  function onchange(e) {
-    setdata({ ...data, [e.target.name]: e.target.value });
-  }
   function handleOnChange(e) {
     setRegis({ ...regis, [e.target.name]: e.target.value });
   }

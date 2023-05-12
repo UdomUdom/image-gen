@@ -2,9 +2,11 @@ import { useState } from 'react';
 import Background from '../components/Background';
 import Header from '../components/Header';
 import Signup from './signup';
+import notify from '@/libs/notify';
 
 export default function Home() {
   const [v, sv] = useState({ username: '', password: '' });
+  const [profile, setProfile] = useState();
   const [login, setlogin] = useState(false);
   const [image, setimage] = useState();
   const [data, setdata] = useState({
@@ -55,8 +57,13 @@ export default function Home() {
     });
     const value = response.json();
     value.then((e) => {
+      console.log(e);
       if (e.status === 200) {
+        notify('Login Success', 'green');
         setlogin(true);
+        setProfile(e.result.Username);
+      } else {
+        notify('Login Error', 'red');
       }
     });
   }
