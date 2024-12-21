@@ -11,9 +11,11 @@
   "dependencies": {
     "@mantine/core": "^7.13.4",
     "@mantine/hooks": "^7.13.4",
+    "install": "^0.13.0",
+    "lucide-react": "^0.469.0",
+    "next": "15.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.2",
     "tailwind-preset-mantine": "^1.2.1"
   },
   "devDependencies": {

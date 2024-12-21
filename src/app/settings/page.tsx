@@ -1,12 +1,11 @@
 import Background from "@/components/Background";
 import TabBar from "@/components/Tab";
-import ContestSpace from "@/components/content/ContestSpace";
 
-export default function Home() {
+export default function Settings() {
   return (
     <Background>
       <TabBar />
-      <ContestSpace />
+      <h1>Settings</h1>
     </Background>
   );
 }
