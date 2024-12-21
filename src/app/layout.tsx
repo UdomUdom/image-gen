@@ -1,21 +1,41 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  ColorSchemeScript,
+  createTheme,
+  DEFAULT_THEME,
+  MantineProvider,
+  mergeMantineTheme,
+} from "@mantine/core";
+import localFont from "next/font/local";
+import Head from "next/head";
 import "./globals.css";
+import { breakpoints, colors } from "./theme";
 
-const geistSans = Geist({
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "100 900",
 });
-
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
-  title: "Image Generator by Dall-e",
-  description: "Generate images using OpenAI's Dall-e model",
+  title: "Next App Mantine Tailwind Template",
+  description: "Next App Mantine Tailwind Template",
 };
+
+const theme = mergeMantineTheme(
+  DEFAULT_THEME,
+  createTheme({
+    fontFamily: geistSans.style.fontFamily,
+    fontFamilyMonospace: geistMono.style.fontFamily,
+    breakpoints,
+    colors,
+  }),
+);
 
 export default function RootLayout({
   children,
@@ -23,11 +43,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <Head>
+        <ColorSchemeScript />
+      </Head>
+      <body className="antialiased">
+        <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>
     </html>
   );
