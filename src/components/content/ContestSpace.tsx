@@ -13,7 +13,7 @@ export default function ContestSpace() {
   }
   async function createimage() {
     const { prompt, size } = data;
-    const response = await fetch("http://localhost:3000/openai/generateimage", {
+    const response = await fetch("http://localhost:3000", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,8 +30,8 @@ export default function ContestSpace() {
   }
   return (
     <div className="absolute top-28 w-full px-4 max-w-3xl mx-auto">
-      <div className="border-3 border-gray-500 bg-gray-700 bg-opacity-75 rounded-lg p-4 mb-5 flex flex-col items-center">
-        <img src={image} alt="" className="w-full max-w-md" />
+      <div className="border-3 border-gray-500 bg-gray-700 bg-opacity-75 rounded-sm p-4 mb-5 flex flex-col items-center">
+        <img src={image} alt="" className="w-full max-w-md m-64" />
       </div>
       <div className="flex flex-col md:flex-row items-center mb-5 justify-center">
         <input
