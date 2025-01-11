@@ -1,28 +1,36 @@
 {
-  "name": "frontend",
+  "name": "image-gen",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.0",
-    "@emotion/server": "^11.11.0",
-    "@headlessui/react": "^1.7.14",
-    "@heroicons/react": "^2.0.17",
-    "@mantine/core": "^6.0.10",
-    "@mantine/hooks": "^6.0.10",
-    "@mantine/next": "^6.0.10",
-    "@mantine/notifications": "^6.0.10",
-    "autoprefixer": "10.4.14",
-    "next": "13.3.1",
-    "postcss": "8.4.23",
-    "react": "18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.0",
-    "tailwindcss": "3.3.2"
+    "@mantine/core": "^7.13.4",
+    "@mantine/hooks": "^7.13.4",
+    "install": "^0.13.0",
+    "lucide-react": "^0.469.0",
+    "next": "15.1.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-preset-mantine": "^1.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.0.1",
+    "eslint-config-prettier": "^8.10.0",
+    "postcss-preset-mantine": "^1.17.0",
+    "postcss-simple-vars": "^7.0.1",
+    "prettier": "^3.3.3"
   }
 }
